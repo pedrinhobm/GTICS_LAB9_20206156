@@ -1,5 +1,8 @@
 package com.example.clase9webservice.entity;
-
+import lombok.Getter;
+import lombok.Setter;
+@Getter
+@Setter
 public class Category {
 
     private int idCategory;
@@ -39,4 +42,3 @@ public class Category {
         this.strCategoryDescription = strCategoryDescription;
     }
 }
-
