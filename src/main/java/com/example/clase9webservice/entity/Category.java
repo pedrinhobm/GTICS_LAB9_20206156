@@ -1,9 +1,6 @@
 package com.example.clase9webservice.entity;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
-
 @Getter
 @Setter
 public class Category {
@@ -45,4 +42,3 @@ public class Category {
         this.strCategoryDescription = strCategoryDescription;
     }
 }
-
