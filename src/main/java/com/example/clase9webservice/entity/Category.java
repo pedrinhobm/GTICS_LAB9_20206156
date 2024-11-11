@@ -6,25 +6,44 @@ import lombok.Setter;
 
 import jakarta.persistence.*;
 
-@Entity
-@Table(name = "categories")
 @Getter
 @Setter
-@JsonIgnoreProperties("picture")
 public class Category {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "CategoryID", nullable = false)
-    private Integer id;
 
-    @Column(name = "CategoryName", nullable = false, length = 15)
-    private String categoryName;
+    private int idCategory;
+    private String strCategoryName;
+    private String strCategoryThumb;
+    private String strCategoryDescription;
 
-    @Lob
-    @Column(name = "Description")
-    private String description;
+    public int getIdCategory() {
+        return idCategory;
+    }
 
-    @Column(name = "Picture")
-    private byte[] picture;
+    public void setIdCategory(int idCategory) {
+        this.idCategory = idCategory;
+    }
 
+    public String getStrCategoryName() {
+        return strCategoryName;
+    }
+
+    public void setStrCategoryName(String strCategoryName) {
+        this.strCategoryName = strCategoryName;
+    }
+
+    public String getStrCategoryThumb() {
+        return strCategoryThumb;
+    }
+
+    public void setStrCategoryThumb(String strCategoryThumb) {
+        this.strCategoryThumb = strCategoryThumb;
+    }
+
+    public String getStrCategoryDescription() {
+        return strCategoryDescription;
+    }
+
+    public void setStrCategoryDescription(String strCategoryDescription) {
+        this.strCategoryDescription = strCategoryDescription;
+    }
 }

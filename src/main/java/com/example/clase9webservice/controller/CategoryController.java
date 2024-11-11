@@ -1,30 +1,25 @@
 package com.example.clase9webservice.controller;
-
-import com.example.clase9webservice.entity.Product;
-import com.example.clase9webservice.repository.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import com.example.clase9webservice.entity.Category;
+import com.example.clase9webservice.dao.CategoryDao;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
 @RestController
-public class ProductoController {
+@RequestMapping("/api/category")
+public class CategoryController {
 
-    final ProductRepository productRepository;
+    final CategoryDao categoryDao;
 
-    public ProductoController(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    public CategoryController(CategoryDao categoryDao) {
+        this.categoryDao = categoryDao;
     }
 
-    @GetMapping("/api/product")
-    public List<Product> lista(){
-        return productRepository.findAll();
-    }
-
-    @GetMapping("/api/product2")
-    public List<Product> lista2(){
-        return productRepository.findAll();
+    @GetMapping("")
+    public List<Category> listar() {
+        return categoryDao.findAll();
     }
 }
+
