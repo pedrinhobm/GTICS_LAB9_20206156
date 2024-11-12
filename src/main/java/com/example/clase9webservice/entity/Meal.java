@@ -13,6 +13,15 @@ public class Meal {
     private List<String> ingredients;
     private List<String> measures;
 
+    private boolean favorite= false;
+
+    public boolean isFavorite() {
+        return favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        this.favorite = favorite;
+    }
 
     public int getIdMeal() {
         return idMeal;

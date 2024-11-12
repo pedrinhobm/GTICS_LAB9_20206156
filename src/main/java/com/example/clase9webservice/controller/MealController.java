@@ -38,4 +38,15 @@ public class MealController {
         }
         return "mealDetails";
     }
+
+    @PostMapping("/meal/favorite/add")
+    @ResponseBody
+    public String addFavorite(@RequestParam int idMeal){
+        Meal meal = mealDao.buscarPorID(idMeal);
+        if(meal != null) {
+            meal.setFavorite(true);
+            return "success";
+        }
+
+    }
 }
