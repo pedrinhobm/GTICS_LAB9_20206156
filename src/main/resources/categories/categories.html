@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <title th:text="Categorías de comida"></title>
+    </head>
+    <body>
+        <div class="container">
+
+            <h1>Categorías de comida</h1>
+
+            <form action="#" method="get" class="form-inline mb-4">
+                <input type="text" class="form-control" placeholder="Search for a meal">
+                <button type="submit" class="btn btn-primary ml-2">Search</button>
+            </form>
+
+            <div id = "categories-container">
+                <div th:each="category, info : ${categories}">
+                    <img th:src="@{${category.strCategoryThumb}}" alt="Category Thumbnail"/>
+                    <h3 th:text="${category.strCategoryName}"></h3>
+                    <p th:src="${category.strCategoryDescription}"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
